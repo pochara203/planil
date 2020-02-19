@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<!--
+	Radius by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+<head>
+	<title>App Number One</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+
+	<!-- bi -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+
+	<!-- Header -->
+	<header id="header">
+		<div class="inner">
+			<div class="content">
+				<h1>Random App</h1>
+				<a href="#" class="button big alt"><span>Let's Go</span></a>
+			</div>
+			<a href="#" class="button hidden"><span>Let's Go</span></a>
+		</div>
+	</header>
+
+	<!-- Main -->
+	<div id="main">
+		<div class="inner">
+			<div class="form-group">
+				<select class="form-control" id="selector">
+					<option>Default</option>
+					<option>One Portion</option>
+					<option>Buffet</option>
+					<option>Dessert</option>
+					<option>Bangkok</option>
+					<option>Thailand</option>
+					<option>World</option>
+				</select>
+			</div>
+			<div class="columns gen">
+
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+
+		var one = ['1','2','3','4','5','6','7','8','9','10','11','12'];
+		var buffet = ['1','2','3','4','5','6','7','8','9','10','11','12','13'];
+		var dessert = ['1','2','3','4','5','6','7','8','9','10','11','12'];
+		var bangkok = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19'];
+		var thailand = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41'];
+
+		var select = document.querySelector('#selector');
+		select.onchange = function changeListener(){
+			var value = this.value
+			switch(value){
+				case "Default":
+				var gen = document.querySelector('.gen');
+				gen.innerHTML = ""
+				break;
+				case "One Portion": showImg('one', one);
+				break;
+				case "Buffet": showImg('buffet', buffet);
+				break;
+				case "Dessert": showImg('dessert', dessert);
+				break;
+				case "Bangkok": showImg('bangkok', bangkok);
+				break;
+				case "Thailand": showImg('thailand', thailand);
+				break;
+				case "World": console.log('hi');
+				break;
+			}
+		}
+
+		function showImg(type, files){
+
+			shuffle(files)
+
+			var gen = document.querySelector('.gen');
+			var s = "";
+			for (var i = 0; i < files.length; i++) {
+				
+				s+= '<div class="image fit dessert"><img src="images/'+type+'/'+files[i]+'.jpg" alt="" /></div>'
+			}
+			gen.innerHTML = s
+		}
+
+		function shuffle(array) {
+			array.sort(() => Math.random() - 0.5);
+		}
+
+		/*<option>Default</option>
+		<option>One Portion</option>
+		<option>Buffet</option>
+		<option>Bangkok</option>
+		<option>Thailand</option>
+		<option>World</option>*/
+	</script>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+</body>
+
+</html>
